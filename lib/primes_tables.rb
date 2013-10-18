@@ -9,4 +9,13 @@ class PrimesTables
 
     true
   end
+
+  def self.next_prime(n)
+    x = n
+    loop do
+      x += 1
+      break if prime?(x)
+    end
+    x
+  end
 end

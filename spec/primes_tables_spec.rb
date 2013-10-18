@@ -17,4 +17,14 @@ describe PrimesTables do
       end
     end
   end
+
+  describe '.next_prime' do
+    let(:current_and_next_primes) { Hash[[[2, 3], [101, 103], [139, 149]]] }
+
+    it 'returns the next prime number' do
+      current_and_next_primes.each do |current_prime, next_prime|
+        expect(PrimesTables.next_prime(current_prime)).to eq next_prime
+      end
+    end
+  end
 end
