@@ -1,0 +1,2 @@
+class PrimesTables
+end
