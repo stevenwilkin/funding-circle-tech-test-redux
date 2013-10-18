@@ -18,4 +18,14 @@ class PrimesTables
     end
     x
   end
+
+  def self.generate_primes(n)
+    result = [2]
+    return result if n == 1
+
+    for i in 2 .. n do
+      result.push next_prime(result[i - 2])
+    end
+    result
+  end
 end
