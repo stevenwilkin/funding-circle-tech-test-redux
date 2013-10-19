@@ -29,3 +29,5 @@ class PrimesTables
     result
   end
 end
+
+require 'primes_tables/table'
