@@ -1,4 +1,4 @@
-class PrimesTables
+module PrimesTables
   class Table
     attr_accessor :result
 
