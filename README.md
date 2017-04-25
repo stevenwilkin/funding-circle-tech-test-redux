@@ -48,3 +48,9 @@ The testing framework is installed through [Bundler](http://bundler.io/):
 ## Running the tests
 
 	bundle exec rspec
+
+## Running the program
+
+Run `primes_tables.rb` found in the top level of the directory thus:
+
+	./primes_tables.rb --count 10
