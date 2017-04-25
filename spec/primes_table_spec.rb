@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe PrimesTables do
+RSpec.describe PrimesTables do
   let(:primes) { Array.new }
   let(:table) { double(:to_s => output) }
   let(:output) { String.new }

@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe PrimesTables::Table do
+RSpec.describe PrimesTables::Table do
   describe '#result' do
     subject { described_class.new(input).result }
 

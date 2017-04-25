@@ -1,19 +1,17 @@
-require 'spec_helper'
-
-describe PrimesTables::Util do
+RSpec.describe PrimesTables::Util do
   describe '.prime?' do
     let(:primes) { [2, 37, 101, 149 ] }
     let(:non_primes) { [1, 38, 102, 148] }
 
     it 'returns true for prime numbers' do
       primes.each do |x|
-        expect(described_class.prime?(x)).to be_true
+        expect(described_class.prime?(x)).to be_truthy
       end
     end
 
     it 'returns false for non-prime numbers' do
       non_primes.each do |x|
-        expect(described_class.prime?(x)).to be_false
+        expect(described_class.prime?(x)).to be_falsy
       end
     end
   end
