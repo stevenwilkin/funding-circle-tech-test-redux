@@ -15,17 +15,21 @@ module PrimesTables
 
     def to_s
       highest_value = result.flatten.sort.last
-      columns_per_item = highest_value.to_s.size
+      columns_per_item = highest_value.to_s.size + 1
+      columns_per_input = input.last.to_s.size + 1
 
       output = []
 
-      initial_space = " " * (columns_per_item + 1)
-      top_row  = initial_space + input.map { |n| "%#{columns_per_item}s" % n }.join(' ')
+      top_row  = (' ' * columns_per_input) + '|' + input.map { |n| "%#{columns_per_item}s" % n }.join
+      underline = ('-' * columns_per_input) + '+' + ('-' * (result.size * columns_per_item))
       output << top_row
+      output << underline
 
       result.each_with_index do |row, i|
-        row_with_key = row.dup.unshift input[i]
-        output << row_with_key.map { |n| "%#{columns_per_item}s" % n }.join(' ')
+        key = "%#{columns_per_input - 1}s" % input[i]
+        items = row.map { |n| "%#{columns_per_item}s" % n }.join
+
+        output << "#{key} |#{items}"
       end
 
       output.join("\n")
